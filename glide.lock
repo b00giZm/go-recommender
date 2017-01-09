@@ -1,0 +1,6 @@
+hash: dda9b4b85029ddda184b34aa8015fc9df9246a4abf933e54c6ad5530208f81a2
+updated: 2017-01-05T12:06:04.549797473+01:00
+imports:
+- name: github.com/kr/beanstalk
+  version: e99e1a384e4ace0401329ea37f702a2904990f91
+testImports: []

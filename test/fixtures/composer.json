@@ -1,0 +1,13 @@
+{
+    "require": {
+        "pda/pheanstalk": "^3.1",
+        "symfony/console": "^3.2",
+        "fzaninotto/faker": "^1.6"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Chefkoch\\": "src/"
+        }
+    }
+}

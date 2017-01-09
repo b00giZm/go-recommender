@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+source ${DIR}/../.env.sh
+source ${DIR}/../.run-opts.sh
+
+${DIR}/../run \
+    -v ${DIR}/../../test/fixtures:/usr/src/fixtures \
+    -w /usr/src/fixtures \
+    --link "${DOCKER_CONTAINER_BEANSTALKD}":"beanstalk" \
+    php \
+    php ./fixtures.php --host=beanstalk ${@}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+source ${DIR}/../.env.sh
+
+for containerId in $(docker ps --format "{{.ID}} {{.Names}}" | grep ${DOCKER_CONTAINER_BEANSTALKD} | awk '{ print $1 }'); do
+    docker stop ${containerId} && docker rm ${containerId}
+done

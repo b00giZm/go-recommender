@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
+source ${DIR}/../.env.sh
+
+${DIR}/stop
+
+docker run -d --name="${DOCKER_CONTAINER_BEANSTALKD}" -p 11300:11300 ${DOCKER_IMAGE_BEANSTALKD}
+docker run -it --rm --link "${DOCKER_CONTAINER_BEANSTALKD}":"beanstalk" ${DOCKER_IMAGE_RECOMMENDER} -h=beanstalk
