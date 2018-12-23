@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER team-benutzer@chefkoch.de
+MAINTAINER b00gizm@gmail.com
 
 RUN apt-get update \
     && apt-get upgrade \
